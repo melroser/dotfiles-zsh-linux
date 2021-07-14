@@ -1,0 +1,48 @@
+# $HOME/.aliases_zsh
+#
+# Custom Aliases to use in ZSH
+#
+
+# My Aliases
+alias ls='ls -F'
+alias la='ls -A'
+alias l='ls -1'
+alias ll='ls -og'
+alias lll='ls -ogAH'
+alias llll='ls -alH'
+
+# Directory Movement
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+# Enable color support of ls and also add handy aliases
+if [ -x dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    ## Customize ls
+    if [ "$TERM" != "dumb" ]; then
+        eval `dircolors ~/.dir_colors`
+    fi
+    alias ls='ls -F --color=auto --indicator-style=file-type --block-size=M'
+    alias l='ls -1 --group-directories-first'
+    alias ll='ls -og -X --time-style=+ --group-directories-first'
+    alias lll='ls -ogAH -X --time-style=+%m:%d" "%R --group-directories-first'
+    alias llll='ls -alH -X --time-style=+%c --group-directories-first'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Clear Screen
+alias cls='clear'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# copy with a progress bar.
+# alias cp='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
+
+

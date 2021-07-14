@@ -1,0 +1,8 @@
+# $HOME/.zshenv
+#
+# ZSH Environment Variables and Exports
+#
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/share/zsh/plugins/zsh-syntax-highlighting/highlighters
+
+export QT_STYLE_OVERRIDE=kvantum
